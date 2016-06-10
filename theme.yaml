@@ -1,6 +1,6 @@
 name: "webcomic"
 license: "MIT"
-licenselink: "https://github.com/matcornic/hugo-webcomic-theme/blob/master/LICENSE.md"
+licenselink: "https://github.com/TBPixel/hugo-webcomic-theme/blob/master/LICENSE.md"
 description: "A webcomic template theme. Artists with a little bit of technical knowledge can freely deploy to github pages via hugo."
 homepage: "https://github.com/TBPixel/hugo-webcomic-theme"
 tags:

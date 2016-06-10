@@ -10,15 +10,20 @@
 </head>
 <body>
 
-  {{ partial "header.html" . }}
+  <div class="wrapper">
 
-  <main class="site-main">
+    {{ partial "header.html" . }}
 
-  </main>
+    {{ partial "nav.html" . }}
 
-  {{ partial "footer.html" . }}
+    <main class="main">
+
+    </main>
+
+    {{ partial "footer.html" . }}
+
+  </div>
 
   {{ partial "scripts.html" . }}
-
 </body>
 </html>

@@ -1,3 +1,2 @@
-<div class="site-logo">
-  <!-- Include your logo as an image or html SVG -->
-</div>
+<!-- Include your logo as an image or html SVG -->
+{{ if .Site.Params.logo }}<img class="header__logo" src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">{{ end }}

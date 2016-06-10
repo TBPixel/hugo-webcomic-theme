@@ -1,0 +1,10 @@
+<!-- Site Navigation Goes Here -->
+<nav class="navigation">
+  <!-- Link Template -->
+  <a class="navigation__link" href="{{ .Site.BaseURL }}">Home</a>
+  <a class="navigation__link" href="{{ .Site.BaseURL }}archive/">Archive</a>
+  {{ range where .Data.Pages "Section" "pages" }}
+  <a class="navigation__link" href="{{ .Permalink }}">{{ .Title }}</a>
+  {{ end }}
+  <a class="navigation__link" href="{{ .Site.RSSLink }}">RSS</a><!-- RSS Generated Automatically by Hugo -->
+</nav>
