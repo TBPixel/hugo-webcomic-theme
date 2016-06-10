@@ -1,0 +1,8 @@
+<meta property="og:url" content="{{ with .Permalink }}{{ . }}{{ else }}{{ .Site.BaseURL }}{{ end }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ with .Title }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}">
+{{ with $.Param "image" }}<meta property="og:image" content="{{ . }}">{{ end }}
+{{ with $.Param "description" }}<meta property="og:description" content="{{ . }}">{{ end }}
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="en_US">
+{{ with $.Param "author" }}<meta property="article:author" content="{{ . }}">{{ end }}

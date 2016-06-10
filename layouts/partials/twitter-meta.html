@@ -1,0 +1,7 @@
+<meta name="twitter:card" content="summary">
+{{ with .Site.Params.twitter }}<meta name="twitter:site" content="@{{ . }}">{{ end }}
+{{ with $.Param "twitter" }}<meta name="twitter:creator" content="@{{ . }}">{{ end }}
+<meta name="twitter:url" content="{{ with .Permalink }}{{ . }}{{ else }}{{ .Site.BaseURL }}{{ end }}">
+<meta name="twitter:title" content="{{ with .Title }}{{ . }}{{ else }}{{ with .Site.Title }}{{ . }}{{ end }}{{ end }}">
+{{ with $.Param "description" }}<meta name="twitter:description" content="{{ . }}">{{ end }}
+{{ with $.Param "image" }}<meta name="twitter:image" content="{{ . }}">{{ end }}

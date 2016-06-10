@@ -1,0 +1,21 @@
+<!-- Site & Page MetaData - No need to touch anything here! -->
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Build Meta -->
+{{ .Hugo.Generator }}
+
+<!-- Site Meta -->
+<meta name="url" content="{{ .Site.BaseURL }}">
+
+<!-- Page Meta -->
+<title>{{ with .Title }}{{ . }}{{ else }}{{ with .Site.Title }}{{ . }}{{ end }}{{ end }}</title>
+{{ with $.Param "description" }}<meta name="description" content="{{ . }}">{{ end }}
+{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+<link rel="canonical" href="{{ with .Permalink }}{{ . }}{{ else }}{{ .Site.BaseURL }}{{ end }}">
+<!-- Content Relativity -->
+{{ if .IsPage }}
+{{ with .Next }}<link rel="next" href="{{ .Permalink }}">{{ end }}
+{{ with .Prev }}<link rel="previous" href="{{ .Permalink }}">{{ end }}
+{{ end }}
