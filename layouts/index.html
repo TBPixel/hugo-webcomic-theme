@@ -2,6 +2,7 @@
 <html lang="en" class="no-js">
 <head>
   {{ partial "meta.html" . }}
+  <title>{{ .Site.Title }}</title>
   {{ partial "open-graph.html" . }}
   {{ partial "twitter-meta.html" . }}
   {{ partial "schema.html" . }}
@@ -17,7 +18,9 @@
     {{ partial "nav.html" . }}
 
     <main class="main">
-
+      {{ range first 1 (where .Site.Pages "Section" "comic") }}
+        {{ .Render "comic" }}
+      {{ end }}
     </main>
 
     {{ partial "footer.html" . }}

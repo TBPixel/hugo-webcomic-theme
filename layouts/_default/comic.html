@@ -1,0 +1,12 @@
+<section class="comic-section">
+  <h2 class="comic-section__title">{{ .Title }}</h2>
+  <figure class="comic-section__comic">
+    <img class="comic-section__image" src="{{ .Params.image }}"{{ with .Params.caption }} alt="{{ . }}"{{ end }}>
+    {{ with .Params.caption }}
+    <figcaption class="comic-section__caption">
+      {{ . }}
+    </figcaption>
+    {{ end }}
+  </figure>
+  {{ partial "social-sharing.html" . }}
+</section>

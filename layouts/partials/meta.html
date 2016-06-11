@@ -10,7 +10,7 @@
 <meta name="url" content="{{ .Site.BaseURL }}">
 
 <!-- Page Meta -->
-<title>{{ with .Title }}{{ . }}{{ else }}{{ with .Site.Title }}{{ . }}{{ end }}{{ end }}</title>
+<title>{{ if .Title }}{{ .Title }} - {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
 {{ with $.Param "description" }}<meta name="description" content="{{ . }}">{{ end }}
 {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 <link rel="canonical" href="{{ with .Permalink }}{{ . }}{{ else }}{{ .Site.BaseURL }}{{ end }}">
