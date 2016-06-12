@@ -17,7 +17,16 @@
     {{ partial "nav.html" . }}
 
     <main class="main">
+      <section class="archive">
+        <ul class="archive-list">
+        {{ range where .Site.Pages "Section" "comic" }}
+        {{ .Render "archive-thumbnail" }}
+        {{ end }}
+        </ul>
+      </section>
+      <section class="pagination">
 
+      </section>
     </main>
 
     {{ partial "footer.html" . }}
