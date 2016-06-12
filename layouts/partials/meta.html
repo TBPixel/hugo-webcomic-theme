@@ -10,7 +10,8 @@
 <meta name="url" content="{{ .Site.BaseURL }}">
 
 <!-- Page Meta -->
-<title>{{ if .Title }}{{ .Title }} - {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+{{ .Scratch.Add "title" "" }}{{ if isset .Site.Data.titles .Title }}{{ .Scratch.Set "title" (index .Site.Data.titles .Title).title }}{{ else }}{{ .Scratch.Set "title" .Title}}{{end}}
+<title>{{ .Scratch.Get "title" }}</title>
 {{ with $.Param "description" }}<meta name="description" content="{{ . }}">{{ end }}
 {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 <link rel="canonical" href="{{ with .Permalink }}{{ . }}{{ else }}{{ .Site.BaseURL }}{{ end }}">
