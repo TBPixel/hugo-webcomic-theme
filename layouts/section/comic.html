@@ -17,15 +17,44 @@
     {{ partial "nav.html" . }}
 
     <main class="main">
+      {{ $paginator := .Paginate (where .Data.Pages "Section" "comic") }}
       <section class="archive">
         <ul class="archive-list">
-        {{ range where .Site.Pages "Section" "comic" }}
-        {{ .Render "archive-thumbnail" }}
+        {{ range $paginator.Pages }}
+          {{ .Render "archive-thumbnail" }}
         {{ end }}
         </ul>
       </section>
-      <section class="pagination">
 
+      <section class="pagination">
+        <ul class="pagination__list">
+          <!-- Includes Paginator Back-To-Start -->
+          {{ if $paginator.HasPrev }}
+          {{ with $paginator.First }}
+          <li class="pagination__item">
+            <a class="pagination__link" href="{{ .URL }}">
+              <i class="fa fa-step-backward" aria-hidden="true"></i>
+            </a>
+          </li>
+          {{ end }}
+          {{ end }}
+          <!-- Numberic Pagination -->
+          {{ range $paginator.Pagers }}
+          <li class="pagination__item">
+            <a class="pagination__link" href="{{ .URL }}">{{ .PageNumber }}</a>
+          </li>
+          {{ end }}
+          <!-- Includes Paginator Skip-To-End -->
+          {{ if $paginator.HasNext }}
+          {{ with $paginator.Last }}
+          <li class="pagination__item">
+            <a class="pagination__link" href="{{ .URL }}">
+              <i class="fa fa-step-forward" aria-hidden="true"></i>
+            </a>
+          </li>
+          {{ end }}
+          {{ end }}
+        </ul>
       </section>
     </main>
 

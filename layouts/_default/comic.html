@@ -1,12 +1,31 @@
 <section class="comic-section">
   <h2 class="comic-section__title">{{ .Title }}</h2>
+
+  <!-- Previous Comic Button -->
+  {{ if .PrevInSection }}
+  <a class="comic-section__prev" href="{{ .PrevInSection.Permalink }}">
+    <i class="fa fa-chevron-left" aria-hidden="false"></i>
+  </a>
+  {{ end }}
+
+  <!-- Current Comic -->
   <figure class="comic-section__comic">
     <img class="comic-section__image" src="{{ .Params.image }}" alt="{{ .Title }}">
+    <!-- Comic Caption ( if set ) -->
     {{ with .Params.caption }}
     <figcaption class="comic-section__caption">
       {{ . }}
     </figcaption>
     {{ end }}
   </figure>
+
+  <!-- Next Comic Button -->
+  {{ if .NextInSection }}
+  <a class="comic-section__next" href="{{ .NextInSection.Permalink }}">
+    <i class="fa fa-chevron-right" aria-hidden="false"></i>
+  </a>
+  {{ end }}
+
+  <!-- Includes Social Media Links -->
   {{ partial "social-sharing.html" . }}
 </section>

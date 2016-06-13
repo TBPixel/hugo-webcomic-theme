@@ -1,3 +1,4 @@
+<!-- Google & Schema.org. Mainly Search Engine Optimization -->
 {{ with $.Param "googleplus" }}<link href="https://plus.google.com/+{{ . }}" rel="publisher">{{ end }}
 <meta itemprop="name" content="{{ with .Title }}{{ . }}{{ else }}{{ with .Site.Title }}{{ . }}{{ end }}{{ end }}">
 {{ with $.Param "description" }}<meta itemprop="description" content="{{ . }}">{{ end }}

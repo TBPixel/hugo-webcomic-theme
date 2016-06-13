@@ -1,8 +1,8 @@
 <!-- Site Navigation Goes Here -->
 <nav class="navigation">
-  <!-- Link Template -->
   <a class="navigation__link" href="{{ .Site.BaseURL }}">Home</a>
   <a class="navigation__link" href="{{ .Site.BaseURL }}comic/">Comics</a>
+  <!-- Include pages in content/pages folder -->
   {{ range where .Site.Pages "Section" "pages" }}
   <a class="navigation__link" href="{{ .Permalink }}">{{ .Title }}</a>
   {{ end }}
