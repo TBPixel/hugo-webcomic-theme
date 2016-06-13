@@ -3,5 +3,55 @@
 <!-- Relative URL's to Site CSS Styles -->
 <link href="/css/main.css" rel="stylesheet" media="screen" charset="utf-8">
 <link href="/css/print.css" rel="stylesheet" media="print" charset="utf-8">
+<!-- Critical CSS Inlined -->
+<style>
+
+/* Contains Entire Page Contents */
+/* Like a thin paper wrap for your sandwich */
+body {
+  /* Aligns .wrapper to center of page */
+  text-align: center;
+}
+
+/* Extra Layer for holding Page Contents */
+/* Like the bread of your sandwich */
+.wrapper {
+  /* Resizes to fit Content */
+  display: inline-block;
+  /* Ensures Content not > Viewport */
+  width: auto;
+  max-width: 100%;
+}
+
+/* Clearfix for Comic Content UI */
+.comic-section__content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  /* Comic Section Floats */
+  /* Orders Prev, Comic & Next items */
+  .comic-section__prev,
+  .comic-section__next,
+  .comic-section__comic {
+    float: left;
+  }
+
+
+/* Reset <ul> list styles */
+.archive__list,
+.pagination__list {
+
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+  /* Lay Out Pagination List Items Horizontally */
+  .pagination__item {
+    display: inline-block;
+  }
+
+</style>
 <!-- OPTIONAL INLINE CSS -->
 <style></style>

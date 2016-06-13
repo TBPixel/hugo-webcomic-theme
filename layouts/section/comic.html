@@ -19,7 +19,7 @@
     <main class="main">
       {{ $paginator := .Paginate (where .Data.Pages "Section" "comic") }}
       <section class="archive">
-        <ul class="archive-list">
+        <ul class="archive__list">
         {{ range $paginator.Pages }}
           {{ .Render "archive-thumbnail" }}
         {{ end }}
