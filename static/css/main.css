@@ -17,11 +17,50 @@ body { background-color: #F7F7F7; }
   .header__logo {
     /* Properly holds <a> & removes extra pixels from <img> */
     display: block;
+    /* Ensures <img> is responsive */
+    max-width: 100%;
+    height: auto;
   }
 
 
 /*----------- Site Navigation -----------*/
-
+.navigation {
+  /* IE 8 - Uknown Number of Links */
+  display: table;
+  table-layout: inherit;
+  width: 100%;
+}
+  .navigation__list {
+    /* Reset List Style */
+    list-style: none;
+    padding-left: 0;
+    /* Responsive Table Grid */
+    display: table-row;
+  }
+    .navigation__item {
+      /* Responsive Table Cell */
+      display: table-cell;
+      text-align: center;
+    }
+      .navigation__link {
+        /* CSS RESET */
+        text-decoration: none;
+        /* Block Button */
+        box-sizing: border-box;
+        display: block;
+        /* Link Button Styles */
+        padding: 8px 4px;
+        background-color: #AAA;
+        color: #444;
+        /* Transition Colors for Modern Browsers */
+        transition: background-color 150ms ease-out, color 150ms ease-out;
+      }
+        .navigation__link:hover,
+        .navigation__link:focus,
+        .navigation__link:active {
+          background-color: #CCC;
+          color: #222;
+        }
 
 
 /*= Site Styles ( Every Page ) =*/
@@ -51,7 +90,13 @@ body { background-color: #F7F7F7; }
       display: block;
       margin: 0;
     }
-      .comic-section__image { display: block; } /* Removes space from just below the <img> tag */
+      .comic-section__image {
+        /* Removes space from just below the <img> tag */
+        display: block;
+        /* Ensures <img> is responsive */
+        max-width: 100%;
+        height: auto;
+      }
       .comic-section__caption {
         position: absolute;
         bottom: -18px;

@@ -1,10 +1,12 @@
 <!-- Site Navigation Goes Here -->
 <nav class="navigation">
-  <a class="navigation__link" href="{{ .Site.BaseURL }}">Home</a>
-  <a class="navigation__link" href="{{ .Site.BaseURL }}comic/">Comics</a>
-  <!-- Include pages in content/pages folder -->
-  {{ range where .Site.Pages "Section" "pages" }}
-  <a class="navigation__link" href="{{ .Permalink }}">{{ .Title }}</a>
-  {{ end }}
-  <a class="navigation__link" href="{{ .Site.RSSLink }}">RSS</a><!-- RSS Generated Automatically by Hugo -->
+  <ul class="navigation__list">
+    <li class="navigation__item"><a class="navigation__link" href="{{ .Site.BaseURL }}">Home</a></li>
+    <li class="navigation__item"><a class="navigation__link" href="{{ .Site.BaseURL }}comic/">Comics</a></li>
+    <!-- Include pages in content/pages folder -->
+    {{ range where .Site.Pages "Section" "pages" }}
+    <li class="navigation__item"><a class="navigation__link" href="{{ .Permalink }}">{{ .Title }}</a></li>
+    {{ end }}
+    <li class="navigation__item"><a class="navigation__link" href="{{ .Site.RSSLink }}">RSS</a></li><!-- RSS Generated Automatically by Hugo -->
+  </ul>
 </nav>

@@ -2,6 +2,6 @@
 title: "Title Here"
 caption: "OPTIONAL: Appears Below Comic Image"
 description: "Description Here"
-image: "image-path/to-file.png"
-thumbnail: "image-path/to-small-file.png"
+image: "http://placehold.it/650x1011"
+thumbnail: "http://placehold.it/65x101"
 ---
