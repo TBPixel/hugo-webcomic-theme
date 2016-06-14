@@ -1,0 +1,102 @@
+/*=============================================>>>>>
+= Site Styles ( Every Page ) =
+===============================================>>>>>*/
+
+/* Soft-White Background */
+body { background-color: #F7F7F7; }
+
+/*----------- Site Wrapper -----------*/
+.wrapper {
+  /* Spaces out the edges of the site */
+  margin: 16px;
+}
+
+
+/*----------- Site Header -----------*/
+  .header__link,
+  .header__logo {
+    /* Properly holds <a> & removes extra pixels from <img> */
+    display: block;
+  }
+
+
+/*----------- Site Navigation -----------*/
+
+
+
+/*= Site Styles ( Every Page ) =*/
+/*=============================================<<<<<*/
+
+
+
+/*=============================================>>>>>
+= Comics Section Styles =
+===============================================>>>>>*/
+
+  .comic-section__title {
+    /* Reset <h2> styles */
+    margin-top: 0;
+    margin-bottom: 0;
+  	font-size: 100%;
+    font-weight: bold;
+  }
+  .comic-section__content {
+    /* Adds spacing to compensate for caption being removed from flow */
+    /* Adjust according to font size */
+    margin-bottom: 18px;
+  }
+
+    .comic-section__comic {
+      /* CSS Reset for <figure> */
+      display: block;
+      margin: 0;
+    }
+      .comic-section__image { display: block; } /* Removes space from just below the <img> tag */
+      .comic-section__caption {
+        position: absolute;
+        bottom: -18px;
+        left: 0;
+        right: 0;
+      }
+
+    .comic-section__prev,
+    .comic-section__next {
+      /* Icon Spacing */
+      box-sizing: border-box;
+      padding-left: 16px;
+      padding-right: 16px;
+
+      /* Link Visuak Styles */
+      /* IE 8 Solid Colors only */
+      background-color: #222;
+      /* Modern Browsers */
+      background-color: rgba( 0, 0, 0, .05 );
+      color: #FFFFFF;
+
+      /* Hides Button Visibility until hovered or used */
+      /* IE 8 Opacity */
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      /* Modern Opacity */
+      opacity: 0;
+
+      transition: 150ms opacity ease-out;
+    }
+      /* Creates a fade-in effect, or a cut on IE8 */
+      .comic-section__prev:hover,
+      .comic-section__prev:focus,
+      .comic-section__prev:active,
+      .comic-section__next:hover,
+      .comic-section__next:focus,
+      .comic-section__next:active {
+        /* IE 8 Opacity */
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        /* Modern Opacity */
+        opacity: 1;
+      }
+
+  .comic-section__social-sharing {
+    /* Create gap from content */
+    margin-top: 32px;
+  }
+/*= End of Comics Section Styles =*/
+/*=============================================<<<<<*/

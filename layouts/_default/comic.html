@@ -1,12 +1,12 @@
 <section class="comic-section">
-  <h2 class="comic-section__title">{{ .Title }}</h2>
+  {{ with .Title }}<h2 class="comic-section__title">{{ . }}</h2>{{ end }}
 
   <article class="comic-section__content">
 
     <!-- Previous Comic Button -->
     {{ if .PrevInSection }}
     <a class="comic-section__prev" href="{{ .PrevInSection.Permalink }}">
-      <i class="fa fa-chevron-left" aria-hidden="false"></i>
+      <i class="comic-section__icon fa fa-chevron-left fa-2x" aria-hidden="false"></i>
     </a>
     {{ end }}
 
@@ -26,7 +26,7 @@
     <!-- Next Comic Button -->
     {{ if .NextInSection }}
     <a class="comic-section__next" href="{{ .NextInSection.Permalink }}">
-      <i class="fa fa-chevron-right" aria-hidden="false"></i>
+      <i class="comic-section__icon fa fa-chevron-right fa-2x" aria-hidden="false"></i>
     </a>
     {{ end }}
 

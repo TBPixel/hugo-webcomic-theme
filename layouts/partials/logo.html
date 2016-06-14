@@ -1,2 +1,7 @@
-<!-- Include your logo as an image or html SVG -->
-{{ if .Site.Params.logo }}<img class="header__logo" src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">{{ end }}
+<!-- Include your logo ( or banner ) as an image or html SVG -->
+<!-- Logo is also a param available in config.yaml -->
+{{ if .Site.Params.logo }}
+<img class="header__logo" src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">
+{{ else }}
+<h1 class="header__title">{{ .Site.Title }}</h1>
+{{ end }}

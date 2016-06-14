@@ -1,14 +1,11 @@
-<!-- Permalink URL's to external CSS & Assets -->
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" charset="utf-8">
-<!-- Relative URL's to Site CSS Styles -->
-<link href="/css/main.css" rel="stylesheet" media="screen" charset="utf-8">
-<link href="/css/print.css" rel="stylesheet" media="print" charset="utf-8">
 <!-- Critical CSS Inlined -->
 <style>
 
 /* Contains Entire Page Contents */
 /* Like a thin paper wrap for your sandwich */
 body {
+  /* Clears Default Styles */
+  margin: 0;
   /* Aligns .wrapper to center of page */
   text-align: center;
 }
@@ -23,19 +20,36 @@ body {
   max-width: 100%;
 }
 
-/* Clearfix for Comic Content UI */
-.comic-section__content:after {
-  content: "";
-  display: table;
-  clear: both;
+/* Properly Aligns and lays out comic-section content & UI */
+.comic-section__content {
+  position: relative
 }
-  /* Comic Section Floats */
-  /* Orders Prev, Comic & Next items */
-  .comic-section__prev,
-  .comic-section__next,
-  .comic-section__comic {
-    float: left;
-  }
+
+.comic-section__prev,
+.comic-section__next {
+  /* Fills Comic Image with Next & Previous Buttons ( 50% each ) */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+}
+
+/* Aligns icon horizontally to left edge */
+.comic-section__prev { text-align: left; }
+.comic-section__next {
+  /* Ensures next button is always from 50% - 100% of image width */
+  left: 50%;
+  /* Aligns icon horizontally to right edge */
+  text-align: right;
+}
+
+/* Aligns both icons to vertical center */
+.comic-section__icon {
+  position: relative;
+  top: 50%;
+  transform: translateY( -50% );
+}
 
 
 /* Reset <ul> list styles */
@@ -52,6 +66,26 @@ body {
     display: inline-block;
   }
 
+
+  /* Role Reset for older browsers */
+  .archive,
+  .comic-section,
+  .comic-section__content,
+  .comic-section__figcaption,
+  .comic-section__social-sharing,
+  .footer,
+  .header,
+  .main,
+  .navigation,
+  .pagination
+  { display: block; }
 </style>
+
+<!-- Permalink URL's to external CSS & Assets -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" charset="utf-8">
+<!-- Relative URL's to Site CSS Styles -->
+<link href="/css/main.css" rel="stylesheet" media="screen" charset="utf-8">
+<link href="/css/print.css" rel="stylesheet" media="print" charset="utf-8">
+
 <!-- OPTIONAL INLINE CSS -->
 <style></style>
