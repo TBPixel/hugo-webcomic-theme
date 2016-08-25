@@ -21,6 +21,9 @@ body { background-color: #F7F7F7; }
     max-width: 100%;
     height: auto;
   }
+  .header__title {
+    text-transform: capitalize;
+  }
 
 
 /*----------- Site Navigation -----------*/
